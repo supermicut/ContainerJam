@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Container Jam: Port Puzzle – Privacy Policy, User Agreement and Support</title>
+<meta name="description" content="Container Jam: Port Puzzle is a harbour puzzle game for Android. Privacy Policy, User Agreement (Terms of Use) and support for the game.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23085041'/%3E%3Crect x='5' y='9' width='10' height='7' fill='%23F2B632'/%3E%3Crect x='17' y='9' width='10' height='7' fill='%23E5484D'/%3E%3Crect x='5' y='17' width='10' height='7' fill='%233E9BE0'/%3E%3Crect x='17' y='17' width='10' height='7' fill='%2346B97A'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --deep: #085041;
+    --teal: #0F6E56;
+    --amber: #854F0B;
+    --ink: #10302a;
+    --muted: #4a625c;
+    --paper: #ffffff;
+    --wash: #eef5f3;
+    --line: #cfe0db;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 72px); }
+  body {
+    margin: 0;
+    background: var(--wash);
+    color: var(--ink);
+    font-family: ui-rounded, "SF Pro Rounded", "Nunito", "Varela Round", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  a { color: var(--teal); text-underline-offset: 2px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; border-radius: 4px; }
+
+  /* Top bar */
+  .bar {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+    background: var(--deep); color: #fff;
+  }
+  .bar-inner {
+    max-width: 960px; margin: 0 auto; padding: 12px 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  }
+  .brand { color: #fff; text-decoration: none; font-weight: 800; font-size: 1.15rem; letter-spacing: .01em; display: flex; align-items: center; gap: 10px; }
+  .brand-mark { display: grid; grid-template-columns: repeat(2, 12px); gap: 2px; }
+  .brand-mark span { width: 12px; height: 8px; border-radius: 1px; }
+  nav { display: flex; gap: 4px; flex-wrap: wrap; }
+  nav a {
+    color: #d9efe9; text-decoration: none; padding: 6px 12px; border-radius: 999px; font-size: .95rem;
+  }
+  nav a:hover { background: rgba(255,255,255,.1); color: #fff; }
+  nav a[aria-current="page"] { background: #fff; color: var(--deep); font-weight: 700; }
+
+  /* Container stack: the one bold element */
+  .stack {
+    display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px;
+    max-width: 960px; margin: 0 auto; padding: 0 20px;
+  }
+  .box {
+    height: 44px; border-radius: 3px;
+    background-image: repeating-linear-gradient(90deg, rgba(255,255,255,.18) 0 3px, transparent 3px 9px);
+    box-shadow: inset 0 -5px 0 rgba(0,0,0,.18);
+  }
+  .stack .box:nth-child(n+11) { transform: translateY(-4px); }
+
+  main { max-width: 960px; margin: 0 auto; padding: 0 20px 48px; }
+  .page { display: block; }
+  html.js .page { display: none; }
+  html.js .page.active { display: block; }
+
+  /* Home */
+  .hero {
+    background: var(--teal); color: #fff;
+    margin: 0 -20px; padding: 48px 20px 40px;
+  }
+  .hero-inner { max-width: 920px; margin: 0 auto; }
+  .hero h1 { font-size: clamp(2.2rem, 7vw, 4rem); line-height: 1.02; margin: 0 0 8px; font-weight: 900; letter-spacing: -.01em; }
+  .hero .sub { font-size: 1.25rem; margin: 0 0 24px; color: #e2f3ee; max-width: 36ch; }
+  .cta {
+    display: inline-block; background: var(--amber); color: #fff; text-decoration: none;
+    font-weight: 800; padding: 14px 24px; border-radius: 10px; font-size: 1.05rem;
+    box-shadow: 0 4px 0 #5c3606;
+  }
+  .cta:active { transform: translateY(2px); box-shadow: 0 2px 0 #5c3606; }
+  .hero-note { margin-top: 12px; font-size: .9rem; color: #c3e4db; }
+  .hero-stack { margin-top: 36px; padding: 0; }
+
+  .how { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 32px; }
+  .how div { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+  .how h2 { font-size: 1.1rem; margin: 0 0 6px; color: var(--deep); }
+  .how p { margin: 0; color: var(--muted); }
+  .links { margin-top: 32px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .links h2 { margin: 0 0 8px; font-size: 1.1rem; color: var(--deep); }
+  .links ul { margin: 0; padding-left: 1.2em; }
+
+  /* Legal pages */
+  .doc {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
+    padding: 28px clamp(18px, 4vw, 44px) 36px; margin-top: 28px;
+  }
+  .doc h1 { font-size: clamp(1.7rem, 4.5vw, 2.3rem); margin: 0 0 4px; color: var(--deep); line-height: 1.15; }
+  .doc .meta { color: var(--muted); margin: 0 0 20px; font-size: .95rem; }
+  .doc h2 { font-size: 1.2rem; margin: 30px 0 8px; color: var(--deep); }
+  .doc h3 { font-size: 1.02rem; margin: 20px 0 6px; }
+  .doc p, .doc li { max-width: 76ch; }
+  .doc ul { padding-left: 1.2em; }
+  .doc li { margin-bottom: 6px; }
+  .summary { background: var(--wash); border-left: 4px solid var(--teal); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 16px 0 8px; }
+  .summary p { margin: 0; }
+  .table-wrap { overflow-x: auto; margin: 12px 0; }
+  table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: .95rem; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { background: var(--wash); color: var(--deep); }
+  .toc { columns: 2 220px; padding-left: 1.2em; margin: 8px 0 0; }
+
+  footer { background: var(--deep); color: #cfe6e0; }
+  .foot { max-width: 960px; margin: 0 auto; padding: 22px 20px; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: .92rem; }
+  .foot a { color: #fff; }
+
+  @media (max-width: 560px) {
+    .box { height: 30px; }
+    .stack { gap: 3px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-inner">
+    <a class="brand" href="#home" aria-label="Container Jam home">
+      <span class="brand-mark" aria-hidden="true">
+        <span style="background:#F2B632"></span><span style="background:#E5484D"></span>
+        <span style="background:#3E9BE0"></span><span style="background:#46B97A"></span>
+      </span>
+      Container Jam
+    </a>
+    <nav aria-label="Site">
+      <a href="#home" data-nav="home">Game</a>
+      <a href="#terms" data-nav="terms">User Agreement</a>
+      <a href="#privacy" data-nav="privacy">Privacy Policy</a>
+      <a href="#support" data-nav="support">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================ HOME ============================ -->
+<section class="page" id="home" data-page="home" data-title="Container Jam: Port Puzzle">
+  <div class="hero">
+    <div class="hero-inner">
+      <h1>Container Jam</h1>
+      <p class="sub">Clear the harbour. Send every truck to the right ship before the berths fill up.</p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=com.AlexandruSimion.ContainerJam">Get it on Google Play</a>
+      <p class="hero-note">Free to play on Android. Contains ads and optional in-app purchases.</p>
+    </div>
+    <div class="stack hero-stack" aria-hidden="true">
+      <div class="box" style="background-color:#E5484D"></div>
+      <div class="box" style="background-color:#F2B632"></div>
+      <div class="box" style="background-color:#46B97A"></div>
+      <div class="box" style="background-color:#3E9BE0"></div>
+      <div class="box" style="background-color:#8E5BD9"></div>
+      <div class="box" style="background-color:#F07C2A"></div>
+      <div class="box" style="background-color:#E75BA8"></div>
+      <div class="box" style="background-color:#2BB5B0"></div>
+      <div class="box" style="background-color:#9BC53D"></div>
+      <div class="box" style="background-color:#1F3A93"></div>
+    </div>
+  </div>
+
+  <div class="how">
+    <div>
+      <h2>Ships come in</h2>
+      <p>Ships moor at the berths, each waiting for containers of one colour.</p>
+    </div>
+    <div>
+      <h2>Trucks go out</h2>
+      <p>Tap a coloured truck in the holding loop to send it to a matching ship. The crane does the loading.</p>
+    </div>
+    <div>
+      <h2>Keep it moving</h2>
+      <p>Plan your order so the berths never jam. Clear the yard to pass the level.</p>
+    </div>
+  </div>
+
+  <div class="how">
+    <div>
+      <h2>Story mode</h2>
+      <p>100 hand-built levels, played in order. Your progress saves automatically on your device.</p>
+    </div>
+    <div>
+      <h2>Random level</h2>
+      <p>Jump into a random level, clear it and get a new one.</p>
+    </div>
+    <div>
+      <h2>No account needed</h2>
+      <p>No sign-up and no login. Just open the game and play.</p>
+    </div>
+  </div>
+
+  <div class="links">
+    <h2>Legal and help</h2>
+    <ul>
+      <li><a href="#terms">User Agreement (Terms of Use)</a></li>
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#privacy-deletion">How to delete your data</a></li>
+      <li><a href="#support">Contact and support</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================ USER AGREEMENT ============================ -->
+<section class="page" id="terms" data-page="terms" data-title="User Agreement – Container Jam: Port Puzzle">
+  <article class="doc">
+    <h1>User Agreement (Terms of Use)</h1>
+    <p class="meta">Container Jam: Port Puzzle · Effective date: 24 September 2026</p>
+
+    <div class="summary">
+      <p>In short: you may play the game for your own personal, non-commercial use. The game is free and shows ads; you can watch optional ads for in-game rewards and make optional purchases through Google Play. Your progress is stored only on your device. Please play fairly and do not tamper with the game.</p>
+    </div>
+
+    <h2>1. Who we are and what this agreement covers</h2>
+    <p>This User Agreement ("Agreement") is a legal agreement between you and <strong>Alexandru Simion</strong>, an independent developer based in Romania ("we", "us", "our"), the publisher of the mobile game <strong>Container Jam: Port Puzzle</strong> (package name <code>com.AlexandruSimion.ContainerJam</code>, the "Game"). It covers the Game, any updates to it, and this website.</p>
+    <p>By downloading, installing or playing the Game you agree to this Agreement and to our <a href="#privacy">Privacy Policy</a>. If you do not agree, please do not use the Game and uninstall it.</p>
+    <p>Your use of Google Play, including purchases, is also governed by the Google Play Terms of Service. If this Agreement conflicts with Google Play's terms on a matter those terms govern, Google Play's terms apply.</p>
+
+    <h2>2. Who can play</h2>
+    <p>The Game is intended for a general audience and is not directed at children under 13. If you are under the age of majority where you live, you may use the Game only with the involvement and permission of a parent or legal guardian, who accepts this Agreement on your behalf and is responsible for your use of the Game, including any purchases.</p>
+
+    <h2>3. Licence to use the Game</h2>
+    <p>We grant you a limited, personal, non-exclusive, non-transferable, non-sublicensable and revocable licence to download, install and use the Game on Android devices you own or control, for your personal, non-commercial entertainment, in accordance with this Agreement and the Google Play usage rules. The Game is licensed, not sold. We and our licensors keep all rights not expressly granted to you.</p>
+
+    <h2>4. What you must not do</h2>
+    <p>You agree not to, and not to help anyone else to:</p>
+    <ul>
+      <li>copy, modify, translate, decompile, disassemble or reverse engineer the Game, except where the law expressly allows it despite this restriction;</li>
+      <li>use cheats, bots, automation, modified versions or other unauthorised third-party software to play or alter the Game;</li>
+      <li>block, skip, fake or otherwise interfere with advertisements or ad rewards, or generate fraudulent ad impressions or clicks;</li>
+      <li>exploit bugs, or circumvent any purchase, licensing or technical protection in the Game;</li>
+      <li>rent, sell, lease, distribute or otherwise make the Game available to others, or use it for commercial purposes;</li>
+      <li>remove or alter any copyright, trademark or other notices in the Game;</li>
+      <li>use the Game in any way that breaks the law or infringes anyone else's rights.</li>
+    </ul>
+
+    <h2>5. Advertising and ad rewards</h2>
+    <p>The Game is free and is supported by advertising served through the Yodo1 MAS mediation platform and its advertising partners, as described in the <a href="#privacy">Privacy Policy</a>. The Game may show full-screen (interstitial) ads, for example after you complete a level.</p>
+    <p>Some features, such as unlocking extra berths, can be obtained by choosing to watch a rewarded ad. Watching rewarded ads is always optional. A reward is granted only after the ad has been watched to completion, and it applies only as described in the Game at the time (for example, an extra berth that lasts for the current level only). Rewards may not be available if no ad can be loaded, for example when your device is offline or no ad is available in your region. Rewards have no monetary value and cannot be exchanged, transferred or refunded.</p>
+    <p>We are not responsible for the content of third-party advertisements, or for any products, services or websites they promote. Any dealings with advertisers are solely between you and the advertiser.</p>
+
+    <h2>6. In-app purchases</h2>
+    <p>The Game may offer optional in-app purchases through the in-game Shop, such as digital items or features. All purchases are processed by Google Play under Google's terms and payment policies; we never receive your payment card details. Prices are shown in the Game and on Google Play in your local currency and include any taxes charged by Google where applicable.</p>
+    <p>Digital items and features ("Virtual Items") are licensed to you for use in the Game only. They have no real-world monetary value, cannot be exchanged for money or anything of value, and cannot be transferred or sold. Consumable Virtual Items are used up when you use them.</p>
+    <p>Refunds are handled under Google Play's refund policies. Nothing in this Agreement limits any refund or other rights you have under applicable consumer law.</p>
+    <p><strong>Consumers in the EU/EEA and UK:</strong> digital content purchased in the Game is supplied immediately after purchase. By completing a purchase, you request immediate supply and acknowledge that you lose your statutory right of withdrawal once supply has begun, to the extent permitted by law. This does not affect your rights if the digital content is faulty or not as described.</p>
+
+    <h2>7. Your game progress</h2>
+    <p>The Game does not use accounts. Your progress and settings are saved locally on your device. They are not backed up by us and cannot be restored by us. If you uninstall the Game, clear its data, reset or change your device, your progress will be lost. Where purchases are tied to your Google Play account, you may be able to restore certain non-consumable purchases through Google Play.</p>
+
+    <h2>8. Intellectual property</h2>
+    <p>The Game and all of its content, including its code, levels, graphics, artwork, sounds, music, text, the name "Container Jam" and related logos, are owned by us or our licensors and are protected by copyright, trademark and other intellectual property laws. Third-party components included in the Game are used under their respective licences.</p>
+    <p>If you send us suggestions or feedback, you allow us to use them freely without any obligation to you.</p>
+
+    <h2>9. Third-party services</h2>
+    <p>The Game relies on third-party services, including Google Play, the Yodo1 MAS advertising platform and its advertising partners. Your use of those services may be subject to their own terms and privacy policies. We are not responsible for the availability, content or practices of third-party services.</p>
+
+    <h2>10. Updates, changes and availability</h2>
+    <p>We may update the Game from time to time, for example to fix bugs, add or remove content or features, or meet legal and platform requirements. Some updates may be required to keep playing. We may suspend or stop offering the Game at any time. The Game needs an internet connection for some features, such as ads and purchases.</p>
+
+    <h2>11. Disclaimer</h2>
+    <p>To the extent permitted by law, the Game is provided "as is" and "as available", without warranties of any kind, whether express or implied, including warranties of merchantability, fitness for a particular purpose and non-infringement. We do not guarantee that the Game will be uninterrupted, error-free, or free of harmful components, or that your progress will never be lost.</p>
+    <p>If you are a consumer, you have legal rights in relation to digital content that is faulty or not as described. Nothing in this Agreement affects those statutory rights.</p>
+
+    <h2>12. Limitation of liability</h2>
+    <p>To the extent permitted by law, we will not be liable for any indirect, incidental, special, consequential or punitive damages, or for any loss of data, game progress, profits or goodwill, arising from or related to your use of, or inability to use, the Game. To the extent permitted by law, our total liability to you for all claims relating to the Game is limited to the greater of (a) the amount you paid for in-app purchases in the Game during the 12 months before the claim arose, or (b) EUR 50.</p>
+    <p>Nothing in this Agreement excludes or limits our liability for death or personal injury caused by our negligence, for fraud or fraudulent misrepresentation, for intentional misconduct or gross negligence, or for any other liability that cannot be excluded or limited under applicable law.</p>
+
+    <h2>13. Ending this Agreement</h2>
+    <p>You can end this Agreement at any time by uninstalling the Game and deleting it from your devices. We may suspend or end your licence if you seriously or repeatedly break this Agreement. When the Agreement ends, you must stop using the Game. Sections 6 (as to Virtual Items), 8, 11, 12 and 14 continue to apply after it ends.</p>
+
+    <h2>14. Governing law and disputes</h2>
+    <p>This Agreement is governed by the laws of Romania. If you are a consumer, you also keep the protection of any mandatory provisions of the law of the country where you live, and you may bring a claim in the courts of your country of residence or in the courts of Romania. We encourage you to <a href="#support">contact us</a> first so we can try to resolve any issue informally.</p>
+
+    <h2>15. Changes to this Agreement</h2>
+    <p>We may update this Agreement from time to time. We will post the updated version on this page and change the effective date above. If a change is material, we will give you reasonable notice, for example in the Game or on this page. If you keep using the Game after a change takes effect, the updated Agreement applies. If you do not agree, please stop using the Game.</p>
+
+    <h2>16. General</h2>
+    <p>If any part of this Agreement is found to be unenforceable, the rest remains in effect. If we do not enforce a right, that is not a waiver of it. You may not transfer your rights under this Agreement; we may transfer ours to another entity that takes over the Game, provided your rights are not reduced. This Agreement, together with the Privacy Policy, is the entire agreement between you and us about the Game.</p>
+
+    <h2>17. Contact</h2>
+    <p>Alexandru Simion, Romania<br>Email: <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+  </article>
+</section>
+
+<!-- ============================ PRIVACY POLICY ============================ -->
+<section class="page" id="privacy" data-page="privacy" data-title="Privacy Policy – Container Jam: Port Puzzle">
+  <article class="doc">
+    <h1>Privacy Policy</h1>
+    <p class="meta">Container Jam: Port Puzzle · Effective date: 24 September 2026</p>
+
+    <div class="summary">
+      <p>In short: we do not ask for your name, email or any account. Your game progress stays on your device. The Game shows ads through Yodo1 MAS, and its advertising partners collect device identifiers and technical data to deliver and measure ads. Where the law requires it, we ask for your consent first, and you can change your choice at any time. Purchases are handled by Google Play.</p>
+    </div>
+
+    <p>Contents:</p>
+    <ul class="toc">
+      <li><a href="#privacy-who">Who is responsible</a></li>
+      <li><a href="#privacy-collect">Data we collect</a></li>
+      <li><a href="#privacy-use">How and why we use data</a></li>
+      <li><a href="#privacy-ads">Advertising and your choices</a></li>
+      <li><a href="#privacy-share">Who we share data with</a></li>
+      <li><a href="#privacy-transfers">International transfers</a></li>
+      <li><a href="#privacy-retention">How long we keep data</a></li>
+      <li><a href="#privacy-deletion">Deleting your data</a></li>
+      <li><a href="#privacy-security">Security</a></li>
+      <li><a href="#privacy-children">Children</a></li>
+      <li><a href="#privacy-rights">Your rights</a></li>
+      <li><a href="#privacy-changes">Changes and contact</a></li>
+    </ul>
+
+    <h2 id="privacy-who">1. Who is responsible for your data</h2>
+    <p>This Privacy Policy applies to the mobile game <strong>Container Jam: Port Puzzle</strong> (package name <code>com.AlexandruSimion.ContainerJam</code>, the "Game") and to this website. The Game is published by <strong>Alexandru Simion</strong>, an independent developer based in Romania ("we", "us", "our"). We are the data controller for the processing described in this policy. Our advertising partners are separately responsible for the data they collect and use for their own purposes.</p>
+    <p>Privacy contact: <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+
+    <h2 id="privacy-collect">2. Data we collect</h2>
+
+    <h3>2.1 Data that stays on your device</h3>
+    <p>The Game saves your level progress, game settings and your privacy choices (such as your consent status and the age information you enter in the privacy dialog) locally on your device. This data is not sent to us, and we do not operate servers that store player data.</p>
+
+    <h3>2.2 Data collected through advertising (Yodo1 MAS and partners)</h3>
+    <p>The Game uses the Yodo1 MAS (Managed Ad Services) software development kit (SDK) to show interstitial and rewarded ads. Yodo1 MAS mediates ads from several advertising networks, including Google AdMob and AppLovin. When ads are requested, shown or interacted with, these SDKs may automatically collect:</p>
+    <ul>
+      <li>device identifiers, such as the Android Advertising ID (AAID) and App Set ID;</li>
+      <li>IP address and the approximate (city- or country-level) location derived from it;</li>
+      <li>device and network information, such as device model and manufacturer, operating system version, language, time zone, screen size, mobile carrier and connection type;</li>
+      <li>app information, such as the app name, package name and version;</li>
+      <li>ad interaction data, such as ads requested, shown, clicked and whether a rewarded ad was completed;</li>
+      <li>diagnostic and performance data related to ad delivery, such as SDK errors and crash information.</li>
+    </ul>
+    <p>We do not request precise GPS location, contacts, photos, camera, microphone or any other sensitive device permission.</p>
+
+    <h3>2.3 Purchases</h3>
+    <p>In-app purchases are processed by Google Play. Google handles your payment details; we never receive your card or bank information. We may receive limited transaction information from Google Play, such as the product purchased, an order ID and purchase status, so the Game can deliver the item.</p>
+
+    <h3>2.4 When you contact us</h3>
+    <p>If you email us, we receive your email address, the content of your message and anything you choose to include (for example screenshots or device details).</p>
+
+    <h3>2.5 This website</h3>
+    <p>This website does not use cookies, analytics or tracking. The hosting provider may process standard server logs (such as IP address, browser type and time of request) to deliver the page and keep it secure.</p>
+
+    <h2 id="privacy-use">3. How and why we use data</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Purpose</th><th>Data involved</th><th>Legal basis (EU/UK GDPR)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Saving your progress and settings on your device</td><td>Local game data</td><td>Performance of our agreement with you (to provide the Game)</td></tr>
+          <tr><td>Showing personalised ads and measuring them</td><td>Advertising data (section 2.2)</td><td>Your consent</td></tr>
+          <tr><td>Showing non-personalised ads, frequency capping, ad fraud prevention and ad delivery</td><td>Advertising data (section 2.2), limited as applicable</td><td>Our legitimate interest in funding a free game and preventing fraud; consent where the law requires it for access to your device</td></tr>
+          <tr><td>Granting rewards for watched ads</td><td>Ad completion events</td><td>Performance of our agreement with you</td></tr>
+          <tr><td>Delivering in-app purchases</td><td>Purchase information (section 2.3)</td><td>Performance of our agreement with you</td></tr>
+          <tr><td>Answering your questions and requests</td><td>Contact data (section 2.4)</td><td>Our legitimate interest in providing support; legal obligation for privacy requests</td></tr>
+          <tr><td>Complying with law and enforcing our terms</td><td>Data as needed</td><td>Legal obligation; legitimate interests</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>We do not sell your personal data for money. We do not use your data for automated decisions that have legal or similarly significant effects on you.</p>
+
+    <h2 id="privacy-ads">4. Advertising, consent and your choices</h2>
+    <p><strong>Privacy dialog.</strong> When you first open the Game, it shows a privacy dialog provided through Yodo1 MAS. It asks for your age and, where required (for example in the EEA, UK and Switzerland), asks for your consent to personalised advertising through a Google-certified consent management platform. The dialog links to this Privacy Policy and our User Agreement. If you do not consent, you will only see non-personalised ads, which may still use limited data for delivery, frequency capping and fraud prevention.</p>
+    <p><strong>Changing your choice.</strong> You can review or change your consent at any time using the privacy options in the Game's settings.</p>
+    <p><strong>Advertising ID controls.</strong> On Android you can reset or delete your advertising ID, or opt out of ads personalisation, in your device settings (usually Settings &gt; Privacy &gt; Ads, or Settings &gt; Google &gt; Ads). Once deleted, apps and ad networks can no longer use it to personalise ads.</p>
+    <p><strong>United States.</strong> Under some US state privacy laws, such as California's, sharing data with ad networks for cross-context behavioural advertising may be considered a "sale" or "sharing" of personal information. You can opt out through the privacy options in the Game or by deleting your advertising ID as described above. Where the Game detects your location and the law requires it, the privacy dialog lets you opt out of such sale or sharing.</p>
+
+    <h2 id="privacy-share">5. Who we share data with</h2>
+    <p>We share or make data available only as described below:</p>
+    <ul>
+      <li><strong>Yodo1 MAS</strong> (Yodo1 Ltd.), our ad mediation provider, which collects advertising data through its SDK and passes ad requests to its partner networks. <a href="https://policy.yodo1.com/website/en/privacy.html" rel="noopener">Yodo1 Privacy Policy</a>.</li>
+      <li><strong>Advertising networks mediated by Yodo1 MAS</strong>, which may include Google AdMob, AppLovin, Unity Ads and ironSource, Mintegral, Pangle, Liftoff (Vungle), BidMachine, Bigo Ads, DT Exchange, Chartboost, InMobi and Meta Audience Network. The exact set of networks can change over time. Each network processes data under its own privacy policy, for example:
+        <a href="https://policies.google.com/privacy" rel="noopener">Google</a>,
+        <a href="https://www.applovin.com/privacy/" rel="noopener">AppLovin</a>,
+        <a href="https://unity.com/legal/privacy-policy" rel="noopener">Unity</a>,
+        <a href="https://www.mintegral.com/en/privacy" rel="noopener">Mintegral</a>,
+        <a href="https://www.pangleglobal.com/privacy" rel="noopener">Pangle</a>,
+        <a href="https://liftoff.io/privacy-policy/" rel="noopener">Liftoff</a>,
+        <a href="https://www.inmobi.com/privacy-policy" rel="noopener">InMobi</a>,
+        <a href="https://www.facebook.com/privacy/policy/" rel="noopener">Meta</a>. You can ask us for the current list at any time.</li>
+      <li><strong>Google Play</strong>, which distributes the Game and processes purchases under the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>.</li>
+      <li><strong>Email and hosting providers</strong> we use to receive support emails and host this website, acting on our behalf.</li>
+      <li><strong>Authorities</strong>, when required by law, or to protect our rights, users or the public.</li>
+      <li><strong>A successor</strong>, if the Game is transferred to another publisher, in which case this policy or an equivalent one will continue to protect your data.</li>
+    </ul>
+
+    <h2 id="privacy-transfers">6. International data transfers</h2>
+    <p>Our advertising partners may process data outside the European Economic Area, including in the United States, Singapore and China. Where data is transferred from the EEA, UK or Switzerland to a country without an adequacy decision, the transfer is protected by appropriate safeguards, such as the European Commission's Standard Contractual Clauses or the EU–US Data Privacy Framework where the recipient participates in it.</p>
+
+    <h2 id="privacy-retention">7. How long we keep data</h2>
+    <ul>
+      <li><strong>Local game data</strong> stays on your device until you uninstall the Game or clear its storage.</li>
+      <li><strong>Support emails</strong> are kept for as long as needed to resolve your request and then deleted within 24 months, unless we need to keep them longer to meet a legal obligation or defend a legal claim.</li>
+      <li><strong>Advertising data</strong> is retained by Yodo1 and each advertising network according to their own retention policies, linked above.</li>
+      <li><strong>Purchase records</strong> are kept by Google Play; any transaction details we receive are kept only as long as required for accounting and tax obligations.</li>
+    </ul>
+
+    <h2 id="privacy-deletion">8. Deleting your data</h2>
+    <p>The Game has no user accounts, so there is no account to delete. You can remove your data as follows:</p>
+    <ul>
+      <li><strong>Game data on your device:</strong> uninstall the Game, or go to Settings &gt; Apps &gt; Container Jam &gt; Storage &gt; Clear data. This permanently deletes your progress and settings.</li>
+      <li><strong>Advertising data:</strong> delete or reset your Android advertising ID (Settings &gt; Privacy &gt; Ads). Data previously collected by an ad network can be requested for deletion from that network using the links in section 5.</li>
+      <li><strong>Data we hold, such as support emails:</strong> email <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a> with the subject "Delete my data – Container Jam". We will delete it within 30 days and confirm. On request, we will also forward your deletion request to Yodo1 MAS so it can be passed to the relevant ad networks.</li>
+    </ul>
+
+    <h2 id="privacy-security">9. Security</h2>
+    <p>We keep the data we handle to a minimum. Data collected by the advertising SDKs is transmitted using encryption in transit (HTTPS). We only work with established providers that apply their own technical and organisational security measures. No method of transmission or storage is completely secure, but we take reasonable steps to protect your data.</p>
+
+    <h2 id="privacy-children">10. Children</h2>
+    <p>The Game is not directed at children under 13, and we do not knowingly collect personal data from children under 13 (or the higher age of digital consent in your country, up to 16 in the EEA).</p>
+    <p>The privacy dialog asks for your age when you first open the Game. If a user indicates they are under 13, the Game tells Yodo1 MAS to treat them as a child: the advertising ID is not transmitted, and only non-personalised ads from Google Play-certified ad networks are requested. Users in the EEA and UK below the local age of digital consent are not asked for consent to personalised ads and receive only non-personalised ads.</p>
+    <p>If you are a parent or guardian and believe your child has provided personal data, please <a href="mailto:{{CONTACT_EMAIL}}">contact us</a> and we will delete it and ask our partners to do the same.</p>
+
+    <h2 id="privacy-rights">11. Your rights</h2>
+    <p>Depending on where you live, you may have the right to:</p>
+    <ul>
+      <li>access the personal data we hold about you and receive a copy;</li>
+      <li>correct inaccurate data;</li>
+      <li>request deletion of your data;</li>
+      <li>restrict or object to certain processing, including processing based on legitimate interests;</li>
+      <li>receive your data in a portable format;</li>
+      <li>withdraw your consent at any time, without affecting processing that happened before;</li>
+      <li>opt out of the "sale" or "sharing" of personal information and of targeted advertising (certain US states);</li>
+      <li>not be discriminated against for exercising your rights.</li>
+    </ul>
+    <p>Because the Game does not use accounts and we do not hold advertising data ourselves, the most effective way to exercise many of these rights is through the in-game privacy options, your device's ad settings, and the advertising partners listed above. For anything else, email <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>. We will reply within one month (EU/UK) or 45 days (US), and may need to ask for information to verify your request.</p>
+    <p>If you are in the EU/EEA, you have the right to lodge a complaint with a data protection authority, in particular in your country of residence. Our lead authority is the Romanian National Supervisory Authority for Personal Data Processing (ANSPDCP), <a href="https://www.dataprotection.ro" rel="noopener">www.dataprotection.ro</a>.</p>
+
+    <h2 id="privacy-changes">12. Changes to this policy</h2>
+    <p>We may update this Privacy Policy, for example when we add or change advertising partners or features. We will post the new version on this page and update the effective date. If the changes are significant, we will give notice in the Game or on this page, and ask for your consent again where the law requires it.</p>
+
+    <h2 id="privacy-contact">13. Contact</h2>
+    <p>Alexandru Simion, Romania<br>Email: <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+  </article>
+</section>
+
+<!-- ============================ SUPPORT ============================ -->
+<section class="page" id="support" data-page="support" data-title="Support – Container Jam: Port Puzzle">
+  <article class="doc">
+    <h1>Support</h1>
+    <p class="meta">Container Jam: Port Puzzle</p>
+    <p>Found a bug, stuck on a level, or have a question about a purchase? Email <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>. It helps to include your device model, Android version and the level number.</p>
+
+    <h2>Common questions</h2>
+    <h3>I lost my progress.</h3>
+    <p>Progress is saved only on your device. It is lost if the Game is uninstalled, its data is cleared, or you move to a new phone. We cannot restore it.</p>
+    <h3>I watched an ad but did not get the reward.</h3>
+    <p>Rewards are granted only when the ad plays to the end. If the ad was interrupted or failed to load, try again with a stable connection. Extra berths unlocked with an ad last for the current level only.</p>
+    <h3>How do I get a refund?</h3>
+    <p>Purchases are processed by Google Play. You can request a refund through Google Play (play.google.com, Account &gt; Order history), or email us and we will help.</p>
+    <h3>How do I change my ad or privacy choices?</h3>
+    <p>Use the privacy options in the Game's settings. See the <a href="#privacy-ads">Privacy Policy</a> for more.</p>
+    <h3>How do I delete my data?</h3>
+    <p>See <a href="#privacy-deletion">Deleting your data</a>.</p>
+  </article>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot">
+    <span>© 2026 Alexandru Simion</span>
+    <a href="#terms">User Agreement</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#support">Support</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var pages = Array.prototype.slice.call(document.querySelectorAll('.page'));
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('[data-nav]'));
+
+  function route() {
+    var id = decodeURIComponent((location.hash || '#home').slice(1)) || 'home';
+    var target = document.getElementById(id);
+    var page = target ? target.closest('.page') : null;
+    if (!page) { page = document.getElementById('home'); target = null; }
+
+    pages.forEach(function (p) { p.classList.toggle('active', p === page); });
+    navLinks.forEach(function (a) {
+      if (a.getAttribute('data-nav') === page.id) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+    document.title = page.getAttribute('data-title') || document.title;
+
+    if (target && target !== page) {
+      target.scrollIntoView();
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }
+
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
+</body>
+</html>
